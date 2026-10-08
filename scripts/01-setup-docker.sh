@@ -3,6 +3,8 @@ set -euo pipefail
 
 # source: https://docs.docker.com/engine/install/ubuntu/
 
+# ===============================
+
 # Add Docker's official GPG key:
 sudo apt update
 sudo apt install ca-certificates curl
@@ -21,11 +23,12 @@ Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 
 sudo apt update
-
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# sudo systemctl status docker # is running?
-# sudo docker run hello-world # test
+sudo systemctl status docker # is running?
+sudo docker run hello-world # test
+
+# ===============================
 
 sudo usermod -aG docker "$USER"
 newgrp docker
